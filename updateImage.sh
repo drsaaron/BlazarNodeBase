@@ -20,5 +20,6 @@ then
     nextVersion=$(echo $currentVersion |awk -F\. '{printf "%s.%s", $1, $2+1}')
     echo "docker base updated, so refreshing uses to version $nextVersion (from $currentVersion"
     buildImage.sh -v $nextVersion
+    pushImage.sh -v $nextVersion
     updateUses.sh -v $nextVersion
 fi
