@@ -10,9 +10,5 @@ RUN apk add --update make
 # install g++
 RUN apk add g++
 
-# install python
-ENV PYTHONUNBUFFERED=1
-RUN apk add --update --no-cache python2 && ln -sf python2 /usr/bin/python
-
 # working directory
 WORKDIR /app
